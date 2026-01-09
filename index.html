@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Rotator</title>
+</head>
+<body>
+    <h2>Upload and Rotate Image</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <br><br>
+
+        <label>Rotation Angle:</label>
+        <input type="number" name="angle" value="90" required>
+        <br><br>
+
+        <button type="submit">Upload & Rotate</button>
+    </form>
+
+    {% if image_url %}
+        <h3>Rotated Image:</h3>
+        <img src="{{ image_url }}" width="300">
+    {% endif %}
+</body>
+</html>
